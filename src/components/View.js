@@ -12,7 +12,9 @@ const View = (props) => {
   useEffect(() => {
     axiosWithAuth()
       .get("/articles")
-      .then((resp) => setArticles(resp.data))
+      .then((resp) => {
+        setArticles(resp.data);
+      })
       .catch((err) => console.log(err));
   }, []);
 
