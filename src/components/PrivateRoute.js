@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 function PrivateRoute(props) {
   const { children, ...rest } = props;
@@ -11,7 +11,7 @@ function PrivateRoute(props) {
         if (localStorage.getItem("token")) {
           return children;
         } else {
-          <Redirect to="/" />;
+          return <Redirect to="/" />;
         }
       }}
     />

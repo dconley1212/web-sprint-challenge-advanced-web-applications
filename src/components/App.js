@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import View from "./View";
 import Header from "./Header";
@@ -14,18 +14,20 @@ const App = () => {
       <BloomHeader />
       <Header />
       <RouteContainer>
-        <PrivateRoute path="/logout">
-          <Logout />
-        </PrivateRoute>
-        <PrivateRoute path="/view">
-          <View />
-        </PrivateRoute>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/">
-          <Login />
-        </Route>
+        <Switch>
+          <PrivateRoute path="/logout">
+            <Logout />
+          </PrivateRoute>
+          <PrivateRoute path="/view">
+            <View />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/">
+            <Login />
+          </Route>
+        </Switch>
       </RouteContainer>
     </AppContainer>
   );
