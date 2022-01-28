@@ -63,7 +63,7 @@ const Login = () => {
             <Button id="submit">Submit</Button>
           </FormGroup>
         </div>
-        <p>{error}</p>
+        <p id="error">{error}</p>
       </ModalContainer>
     </ComponentContainer>
   );
