@@ -16,9 +16,22 @@ const View = (props) => {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleDelete = (id) => {};
+  const handleDelete = (id) => {
+    axiosWithAuth()
+      .delete(`/articles/${id}`)
+      .then((resp) => setArticles(resp.data))
+      .catch((err) => console.log(err));
+  };
 
-  const handleEdit = (article) => {};
+  const handleEdit = (article) => {
+    axiosWithAuth()
+      .put(`/articles/${editId}`, article)
+      .then((resp) => {
+        setArticles(resp.data);
+        setEditing(false);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const handleEditSelect = (id) => {
     setEditing(true);
