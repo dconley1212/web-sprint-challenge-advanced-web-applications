@@ -137,7 +137,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
    You can make sure that the components that your are making are a protected or private route that requires a token to access the content.
 
 3. Describe how web servers work.
-   Web Servers receive requests from web browsers through urls that are sent to them and their software then returns the component files associated with the domain for the browser to display to the user.
+   Web Servers receive requests from web browsers through urls that are sent to them and their software then returns the component files associated with the domain for the browser to display to the user. When authenticating or logging into a website the server will receive json token that contains a header and a body that contains the credentials to gain access to the content on the server.
 
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
    Create: Post
